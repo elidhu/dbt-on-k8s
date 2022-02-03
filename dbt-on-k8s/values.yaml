@@ -1,0 +1,28 @@
+# Default values for dbt-on-k8s.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+airflow:
+  enabled: false
+  # Airflow executor
+  # Options: LocalExecutor, CeleryExecutor, KubernetesExecutor, CeleryKubernetesExecutor
+  executor: "KubernetesExecutor"
+  # Ingress configuration
+  ingress:
+    # Enable ingress resource
+    enabled: true
+    # Configs for the Ingress of the web Service
+    web:
+      # The hostnames or hosts configuration for the web Ingress
+      hosts:
+        - name: "airflow-192.168.64.3.nip.io"
+          # configs for web Ingress TLS
+          tls:
+            # Enable TLS termination for the web Ingress
+            enabled: false
+            # the name of a pre-created Secret containing a TLS private key and certificate
+            secretName: ""
+postgres_operator:
+  enabled: false
+# Deploy a postgres cluster i.e. a Data Warehouse, requires the Postgres Operator
+postgres_dwh:
+  enabled: false

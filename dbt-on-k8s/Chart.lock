@@ -1,0 +1,9 @@
+dependencies:
+- name: airflow
+  repository: https://airflow.apache.org
+  version: 1.4.0
+- name: postgres-operator
+  repository: https://ckotzbauer.github.io/helm-charts
+  version: 1.7.1
+digest: sha256:ab45d830bd08dfd4512d1ee6159d470e2d6483ad30ee1513644401f1481351b8
+generated: "2022-01-31T20:34:55.526455+08:00"
