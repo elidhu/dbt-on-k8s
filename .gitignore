@@ -1,4 +1,6 @@
-
-target/
-dbt_packages/
-logs/
+jaffle-shop-example/target/
+jaffle-shop-example/dbt_packages/
+jaffle-shop-example/logs/
+jaffle-shop-example/.user.yml
+.venv/
+logs

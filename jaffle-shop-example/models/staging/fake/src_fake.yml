@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: jaffle_shop
+    schema: "{{ target.name }}"
+    tables:
+      - name: orders
+      - name: customers

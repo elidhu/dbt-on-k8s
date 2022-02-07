@@ -12,4 +12,4 @@ dependencies:
   - name: postgres-operator
     version: "1.7.1"
     repository: "https://ckotzbauer.github.io/helm-charts"
-    condition: "postgres_operator.enabled"
+    condition: "postgres-operator.enabled"

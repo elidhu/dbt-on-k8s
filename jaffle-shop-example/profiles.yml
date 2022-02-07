@@ -1,0 +1,24 @@
+jaffle_shop:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 30
+      host: localhost
+      port: 6432
+      user: "{{ env_var('DBT_DWH_DEV_USER') }}"
+      pass: "{{ env_var('DBT_DWH_DEV_PASSWORD') }}"
+      dbname: dwh
+      schema: dev
+
+    prod:
+      type: postgres
+      threads: 30
+      host: localhost
+      port: 6432
+      user: "{{ env_var('DBT_DWH_PROD_USER') }}"
+      pass: "{{ env_var('DBT_DWH_PROD_PASSWORD') }}"
+      dbname: dwh
+      schema: prod
+
+  target: dev

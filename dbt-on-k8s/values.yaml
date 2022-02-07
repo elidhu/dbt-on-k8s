@@ -21,8 +21,11 @@ airflow:
             enabled: false
             # the name of a pre-created Secret containing a TLS private key and certificate
             secretName: ""
-postgres_operator:
+
+postgres-operator:
   enabled: false
-# Deploy a postgres cluster i.e. a Data Warehouse, requires the Postgres Operator
+
+# Deploy a postgres cluster i.e. a Data Warehouse, requires the Postgres
+# Operator.
 postgres_dwh:
   enabled: false

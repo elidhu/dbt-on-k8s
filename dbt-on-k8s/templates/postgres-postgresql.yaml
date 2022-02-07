@@ -11,12 +11,14 @@ spec:
   databases: {}
   preparedDatabases:
     dwh:
-      defaultUsers: true
+      # defaultUsers: true
       schemas:
-        demo:
-          # Disable the schema specific roles as we only use one schema. This
-          # will allow the database users to control the schema.
-          defaultRoles: false
+        dev:
+          defaultUsers: true
+          defaultRoles: true
+        prod:
+          defaultUsers: true
+          defaultRoles: true
   postgresql:
     version: "14"
 {{- end -}}
