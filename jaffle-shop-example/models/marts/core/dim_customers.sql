@@ -4,12 +4,14 @@ WITH customers AS (
     FROM
         {{ ref('stg_fake__customers') }}
 ),
+
 orders AS (
     SELECT
         *
     FROM
         {{ ref('stg_fake__orders') }}
 ),
+
 customer_orders AS (
     SELECT
         customer_id,
@@ -21,7 +23,8 @@ customer_orders AS (
     GROUP BY
         1
 ),
-FINAL AS (
+
+final AS (
     SELECT
         customers.customer_id,
         customers.first_name,
@@ -34,9 +37,11 @@ FINAL AS (
         ) AS number_of_orders
     FROM
         customers
-        LEFT JOIN customer_orders USING (customer_id)
+    LEFT JOIN customer_orders
+        ON customers.customer_id = customer_orders.customer_id
 )
+
 SELECT
     *
 FROM
-    FINAL
+    final
